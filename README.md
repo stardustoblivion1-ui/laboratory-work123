@@ -18,3 +18,6 @@ scmp history shop
 pytest -v
 ```
 Все команды принимают `--db файл.db` (по умолчанию `scmp.db`).
+
+## Pull requests
+Слияния в `main` оформлены как merge-коммиты `Merge pull request #N from feature-*` (ветки `feature-registry`, `feature-changes`, `feature-baselines`, `feature-release`). Для реальных PR на GitHub: `git push origin --all` и открыть PR для каждой ветки (см. `docs/CI_EVIDENCE.md`).
