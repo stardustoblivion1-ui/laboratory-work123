@@ -5,6 +5,7 @@ import argparse
 import sys
 
 from .db import TaskDB, TaskError
+from .stats import statistics
 
 
 def fmt(t: dict) -> str:
@@ -28,6 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
         u.add_argument(f"--{f}")
     sub.add_parser("delete").add_argument("id", type=int)
     # --- extra commands (сюда добавляют новые подкоманды) ---
+    sub.add_parser("stats")
     return p
 
 
@@ -47,6 +49,11 @@ def run(argv=None) -> int:
             db.delete(args.id)
             print("Удалена задача", args.id)
         # --- extra dispatch (сюда добавляют обработчики новых подкоманд) ---
+        elif args.cmd == "stats":
+            st = statistics(db)
+            print(f"Всего: {st['total']}, выполнено: {st['done']} ({st['percent_done']}%)")
+            print("По статусам:", st["by_status"])
+            print("По исполнителям:", st["by_assignee"])
     except TaskError as exc:
         print(f"Ошибка: {exc}", file=sys.stderr)
         return 1
