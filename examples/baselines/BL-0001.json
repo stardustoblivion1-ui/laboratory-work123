@@ -1,0 +1,18 @@
+{
+  "id": "BL-0001",
+  "date": "2026-11-10T16:55:06",
+  "approved_by": "Иванов И.И.",
+  "commit_hash": "d18801b91ac1fb397354c0e3656d0175d3c602ca",
+  "previous": null,
+  "items": {
+    "app.py": {
+      "size": 12,
+      "sha256": "e2a825567edf6017316f13512b35ebd795459451065f11edc7ded05f6bc8a90f"
+    },
+    "config.ini": {
+      "size": 10,
+      "sha256": "e041c6222921f2f5c2a30dd0c6acf4bcd851623be0f31e20f2a2ed1ecb1251e1"
+    }
+  },
+  "seal": "d3b37055adc4434c86d966fa8f5babcd787054666586b6ee74d1da73f2e66718"
+}

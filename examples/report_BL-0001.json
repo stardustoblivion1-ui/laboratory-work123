@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-10T16:55:06",
+  "baseline": "BL-0001",
+  "baseline_commit": "d18801b91ac1fb397354c0e3656d0175d3c602ca",
+  "compliant": false,
+  "summary": {
+    "added": 1,
+    "removed": 0,
+    "modified": 1
+  },
+  "nonconformities": [
+    {
+      "path": "new.txt",
+      "kind": "added"
+    },
+    {
+      "path": "app.py",
+      "kind": "modified"
+    }
+  ]
+}

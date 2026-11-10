@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-11-10T16:55:06",
+  "baseline": "BL-0002",
+  "baseline_commit": "d18801b91ac1fb397354c0e3656d0175d3c602ca",
+  "compliant": true,
+  "summary": {
+    "added": 0,
+    "removed": 0,
+    "modified": 0
+  },
+  "nonconformities": []
+}
