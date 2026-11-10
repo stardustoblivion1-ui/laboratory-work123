@@ -5,6 +5,7 @@ import argparse
 import sys
 
 from .db import TaskDB, TaskError
+from .filters import filter_tasks
 
 
 def fmt(t: dict) -> str:
@@ -28,6 +29,10 @@ def build_parser() -> argparse.ArgumentParser:
         u.add_argument(f"--{f}")
     sub.add_parser("delete").add_argument("id", type=int)
     # --- extra commands (сюда добавляют новые подкоманды) ---
+    f = sub.add_parser("filter")
+    f.add_argument("--assignee")
+    f.add_argument("--priority")
+    f.add_argument("--status")
     return p
 
 
@@ -47,6 +52,9 @@ def run(argv=None) -> int:
             db.delete(args.id)
             print("Удалена задача", args.id)
         # --- extra dispatch (сюда добавляют обработчики новых подкоманд) ---
+        elif args.cmd == "filter":
+            for t in filter_tasks(db, args.assignee, args.priority, args.status):
+                print(fmt(t))
     except TaskError as exc:
         print(f"Ошибка: {exc}", file=sys.stderr)
         return 1
