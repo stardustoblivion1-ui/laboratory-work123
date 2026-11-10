@@ -9,7 +9,7 @@ description = "Конфигурируемый аудитор соблюдени�
 requires-python = ">=3.11"
 
 [project.scripts]
-config-auditor = "auditor.cli:main"
+auditor = "auditor.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
