@@ -60,7 +60,7 @@ def test_history_survives_new_store_instance(tmp_path):
 
 
 def test_corrupted_index(tmp_path):
-    doc, st = make(tmp_path)
+    _, st = make(tmp_path)
     st.save()
     st.index_file.write_text("{broken", encoding="utf-8")
     with pytest.raises(VersionError):
