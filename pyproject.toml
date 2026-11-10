@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scm-traceability"
+version = "1.0.0"
+description = "Доказательный контроль изменений: прослеживаемость процессов SCM"
+requires-python = ">=3.10"
+
+[project.scripts]
+scm-traceability = "trace.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
