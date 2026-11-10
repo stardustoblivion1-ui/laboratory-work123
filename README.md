@@ -6,7 +6,7 @@
 
 ```bash
 pip install -r requirements.txt && pip install -e .
-scmtrace ci-add src/trace/registry.py --version 1.0.0            # регистрация КЕ (SQLite-реестр)
+scmtrace ci-add src/scmtrace/registry.py --version 1.0.0            # регистрация КЕ (SQLite-реестр)
 scmtrace request-create CI-001 "Рефакторинг реестра" 1.1.0       # запрос на изменение
 scmtrace decide CR-001 approve --by "Иванов" --note "ок"         # решение
 scmtrace apply CR-001                                            # применить можно только одобренное
