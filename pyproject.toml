@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "release-manager"
+version = "0.9.0"
+description = "Менеджер версий Python-пакета по SemVer и автоматизация релизов"
+requires-python = ">=3.10"
+
+[project.scripts]
+relman = "relman.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
