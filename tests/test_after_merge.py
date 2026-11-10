@@ -1,4 +1,6 @@
 """Проверка, что после разрешения конфликта сохранены функции обеих веток."""
+from pathlib import Path
+
 import pytest
 
 from taskman.cli import build_parser, run
@@ -24,7 +26,7 @@ def test_filter_and_stats_work_together(tmp_path, capsys):
 
 
 def test_features_file_lists_all_functions():
-    text = open("FEATURES.md", encoding="utf-8").read()
+    text = Path("FEATURES.md").read_text(encoding="utf-8")
     for word in ("CRUD", "Фильтрация", "Статистика"):
         assert word in text
     assert "<<<<" not in text
