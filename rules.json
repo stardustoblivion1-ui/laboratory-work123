@@ -1,0 +1,11 @@
+{
+  "required_files": [
+    {"path": "README.md", "severity": "high"},
+    {"path": "CHANGELOG.md", "severity": "medium"},
+    {"path": "pyproject.toml", "severity": "high"}
+  ],
+  "git": {"severity": "critical"},
+  "ci": {"severity": "medium", "dir": ".github/workflows"},
+  "version": {"file": "pyproject.toml", "severity": "high"},
+  "min_commits": {"count": 3, "severity": "medium"}
+}
