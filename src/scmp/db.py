@@ -26,5 +26,12 @@ def connect(path: str = "scmp.db") -> sqlite3.Connection:
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     conn.executescript(CORE_SCHEMA)
+    for schema in _module_schemas():
+        conn.executescript(schema)
     conn.commit()
     return conn
+
+
+def _module_schemas() -> list[str]:
+    from . import changes
+    return [changes.SCHEMA]
