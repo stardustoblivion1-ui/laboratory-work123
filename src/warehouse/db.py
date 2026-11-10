@@ -106,11 +106,12 @@ class Warehouse:
         self.conn.commit()
 
     def search(self, text: str) -> list[dict]:
+        # поиск в Python: SQLite lower() не учитывает регистр кириллицы
+        needle = text.lower()
         rows = self.conn.execute(
             "SELECT p.name, c.name AS category, p.quantity FROM products p "
-            "LEFT JOIN categories c ON c.id=p.category_id "
-            "WHERE lower(p.name) LIKE ? ORDER BY p.name", (f"%{text.lower()}%",))
-        return [dict(r) for r in rows]
+            "LEFT JOIN categories c ON c.id=p.category_id ORDER BY p.name")
+        return [dict(r) for r in rows if needle in r["name"].lower()]
 
     # --- операции ---
     def _log(self, pid: int, kind: str, qty: int, note: str) -> None:
