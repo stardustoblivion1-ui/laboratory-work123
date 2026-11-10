@@ -6,6 +6,7 @@ import sys
 
 from .db import TaskDB, TaskError
 from .filters import filter_tasks
+from .stats import statistics
 
 
 def fmt(t: dict) -> str:
@@ -33,6 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
     f.add_argument("--assignee")
     f.add_argument("--priority")
     f.add_argument("--status")
+    sub.add_parser("stats")
     return p
 
 
@@ -55,6 +57,11 @@ def run(argv=None) -> int:
         elif args.cmd == "filter":
             for t in filter_tasks(db, args.assignee, args.priority, args.status):
                 print(fmt(t))
+        elif args.cmd == "stats":
+            st = statistics(db)
+            print(f"Всего: {st['total']}, выполнено: {st['done']} ({st['percent_done']}%)")
+            print("По статусам:", st["by_status"])
+            print("По исполнителям:", st["by_assignee"])
     except TaskError as exc:
         print(f"Ошибка: {exc}", file=sys.stderr)
         return 1
