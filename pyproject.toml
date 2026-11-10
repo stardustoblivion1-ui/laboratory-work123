@@ -9,7 +9,7 @@ description = "Доказательный контроль изменений: �
 requires-python = ">=3.10"
 
 [project.scripts]
-scm-traceability = "trace.cli:main"
+scm-traceability = "scmtrace.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

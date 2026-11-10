@@ -43,7 +43,7 @@ def _now() -> str:
 
 
 class Registry:
-    def __init__(self, db: str = "trace.db"):
+    def __init__(self, db: str = "scmtrace.db"):
         self.conn = sqlite3.connect(db)
         self.conn.row_factory = sqlite3.Row
         self.conn.executescript(SCHEMA)
