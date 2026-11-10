@@ -9,7 +9,7 @@ description = "Контроль конфигурации файлов проек
 requires-python = ">=3.10"
 
 [project.scripts]
-config-control = "cfgctl.cli:main"
+cfgctl = "cfgctl.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
