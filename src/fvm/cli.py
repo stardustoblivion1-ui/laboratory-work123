@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import sys
 
+from .compare import diff_lines
 from .storage import VersionError, VersionStore
 
 
@@ -20,6 +21,10 @@ def build_parser() -> argparse.ArgumentParser:
     sh = sub.add_parser("show", help="показать версию")
     sh.add_argument("file")
     sh.add_argument("version", type=int)
+    d = sub.add_parser("diff", help="сравнить две версии")
+    d.add_argument("file")
+    d.add_argument("a", type=int)
+    d.add_argument("b", type=int)
     return p
 
 
@@ -46,7 +51,11 @@ def run(argv: list[str] | None = None) -> int:
     return 0
 
 
-def handle_extra(args, store) -> int:  # расширяется в feature-compare
+def handle_extra(args, store) -> int:
+    if args.cmd == "diff":
+        for line in diff_lines(store.get_text(args.a), store.get_text(args.b)):
+            print(line)
+        return 0
     return 2
 
 
