@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-10T17:03:47",
+  "compliant": true,
+  "requests_by_status": {
+    "applied": 1
+  },
+  "baseline_checks": [
+    {
+      "baseline": "BL-001",
+      "ok": true,
+      "modified": [],
+      "missing": []
+    }
+  ],
+  "findings": [
+    {
+      "check": "ci_file",
+      "subject": "CI-001",
+      "ok": true,
+      "message": "README.md соответствует реестру"
+    },
+    {
+      "check": "approval",
+      "subject": "CR-001",
+      "ok": true,
+      "message": "Есть решение об одобрении"
+    },
+    {
+      "check": "git_commit",
+      "subject": "CR-001",
+      "ok": true,
+      "message": "Коммит 7a632fd4cb найден в истории Git"
+    },
+    {
+      "check": "baseline",
+      "subject": "CR-001",
+      "ok": true,
+      "message": "Включён в BL-001"
+    },
+    {
+      "check": "test",
+      "subject": "CR-001",
+      "ok": true,
+      "message": "Тест: tests/test_registry.py::test_apply_updates_version_and_hash"
+    }
+  ],
+  "failed": []
+}
