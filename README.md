@@ -22,3 +22,6 @@ pytest -v
 
 Документы: `SCMP.md`, `docs/TRACEABILITY_MATRIX.md`, `docs/ANALYTICAL_CONCLUSION.md`, `docs/DEMO.md`, `CHANGELOG.md`.
 **Полное соответствие ISO/IEC/IEEE 828 не заявляется** (стандарт — Inactive-Reserved, используется как учебная основа).
+
+## Демонстрация
+Полная цепочка прослеживаемости показана в `docs/DEMO.md`.
