@@ -9,7 +9,7 @@ description = "Складской учёт на SQLite с CI"
 requires-python = ">=3.10"
 
 [project.scripts]
-warehouse-ci = "warehouse.cli:main"
+warehouse = "warehouse.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
