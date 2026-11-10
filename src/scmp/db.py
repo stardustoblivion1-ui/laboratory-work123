@@ -33,5 +33,5 @@ def connect(path: str = "scmp.db") -> sqlite3.Connection:
 
 
 def _module_schemas() -> list[str]:
-    from . import changes
-    return [changes.SCHEMA]
+    from . import baselines, changes
+    return [changes.SCHEMA, baselines.SCHEMA]
