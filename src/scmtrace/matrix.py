@@ -86,7 +86,7 @@ def build_matrix(root: str | Path = ".") -> list[dict]:
 
 
 def render_markdown(rows: list[dict]) -> str:
-    mark = lambda ok: "✅" if ok else "❌"  # noqa: E731
+    mark = lambda ok: "✅" if ok else "❌"
     out = ["# Матрица прослеживаемости", "",
            "| Процесс | Правило SCMP | Функция | Тест | Доказательство | Статус |",
            "|---|---|---|---|---|---|"]
