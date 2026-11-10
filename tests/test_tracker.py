@@ -67,3 +67,13 @@ def test_corrupted_file(tmp_path):
     p.write_text("not json", encoding="utf-8")
     with pytest.raises(TrackerError):
         ChangeTracker(p)
+
+
+def test_filtering_by_author_type_status(tr):
+    a = tr.add("Ivan", "feature", "a")
+    tr.add("Petr", "bugfix", "b")
+    tr.set_status(a.id, "in_progress")
+    assert [c.id for c in tr.find(author="Ivan")] == [a.id]
+    assert len(tr.find(type_="bugfix")) == 1
+    assert [c.id for c in tr.find(status="in_progress")] == [a.id]
+    assert tr.find(author="Nobody") == []
