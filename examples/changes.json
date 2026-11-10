@@ -1,0 +1,20 @@
+[
+  {
+    "id": "CH-001",
+    "author": "Ivan",
+    "date": "2026-11-10",
+    "type": "feature",
+    "description": "Модель изменения, статусы и JSON-хранилище",
+    "status": "done",
+    "commit_hash": "cbc979451504ef5239bf1aa82334d930726e0ff8"
+  },
+  {
+    "id": "CH-002",
+    "author": "Ivan",
+    "date": "2026-11-10",
+    "type": "feature",
+    "description": "Экспорт отчёта JSON (feature-report)",
+    "status": "done",
+    "commit_hash": "fd3eb0822531ea3d3c585e39f43fd228d7ff0bcb"
+  }
+]
