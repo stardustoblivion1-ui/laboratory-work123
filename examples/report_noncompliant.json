@@ -1,0 +1,63 @@
+{
+  "project": "/tmp/ex/bad",
+  "audited_at": "2026-11-10T16:59:24",
+  "compliant": false,
+  "summary": {
+    "critical": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 0
+  },
+  "results": [
+    {
+      "rule": "file:README.md",
+      "category": "files",
+      "severity": "high",
+      "passed": true,
+      "message": "README.md найден"
+    },
+    {
+      "rule": "file:CHANGELOG.md",
+      "category": "files",
+      "severity": "medium",
+      "passed": false,
+      "message": "Отсутствует файл CHANGELOG.md"
+    },
+    {
+      "rule": "file:pyproject.toml",
+      "category": "files",
+      "severity": "high",
+      "passed": true,
+      "message": "pyproject.toml найден"
+    },
+    {
+      "rule": "git",
+      "category": "git",
+      "severity": "critical",
+      "passed": true,
+      "message": "Git-репозиторий найден"
+    },
+    {
+      "rule": "min_commits",
+      "category": "git",
+      "severity": "medium",
+      "passed": true,
+      "message": "Коммитов: 3, требуется не менее 3"
+    },
+    {
+      "rule": "ci",
+      "category": "ci",
+      "severity": "medium",
+      "passed": false,
+      "message": "В .github/workflows нет workflow-файлов (*.yml)"
+    },
+    {
+      "rule": "version",
+      "category": "version",
+      "severity": "high",
+      "passed": false,
+      "message": "Версия '1.0' не соответствует формату MAJOR.MINOR.PATCH"
+    }
+  ],
+  "disclaimer": "Результат аудита не является сертификацией по ISO/IEC/IEEE 828."
+}

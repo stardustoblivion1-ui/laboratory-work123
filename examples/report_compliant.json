@@ -1,0 +1,63 @@
+{
+  "project": "/tmp/ex/good",
+  "audited_at": "2026-11-10T16:59:24",
+  "compliant": true,
+  "summary": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "results": [
+    {
+      "rule": "file:README.md",
+      "category": "files",
+      "severity": "high",
+      "passed": true,
+      "message": "README.md найден"
+    },
+    {
+      "rule": "file:CHANGELOG.md",
+      "category": "files",
+      "severity": "medium",
+      "passed": true,
+      "message": "CHANGELOG.md найден"
+    },
+    {
+      "rule": "file:pyproject.toml",
+      "category": "files",
+      "severity": "high",
+      "passed": true,
+      "message": "pyproject.toml найден"
+    },
+    {
+      "rule": "git",
+      "category": "git",
+      "severity": "critical",
+      "passed": true,
+      "message": "Git-репозиторий найден"
+    },
+    {
+      "rule": "min_commits",
+      "category": "git",
+      "severity": "medium",
+      "passed": true,
+      "message": "Коммитов: 3, требуется не менее 3"
+    },
+    {
+      "rule": "ci",
+      "category": "ci",
+      "severity": "medium",
+      "passed": true,
+      "message": "CI workflow найден: ci.yml"
+    },
+    {
+      "rule": "version",
+      "category": "version",
+      "severity": "high",
+      "passed": true,
+      "message": "Версия 1.0.0 соответствует MAJOR.MINOR.PATCH"
+    }
+  ],
+  "disclaimer": "Результат аудита не является сертификацией по ISO/IEC/IEEE 828."
+}
